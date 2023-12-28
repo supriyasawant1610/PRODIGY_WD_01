@@ -1,0 +1,496 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@300;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    line-height: 4rem;
+}
+
+.left h1 {
+    color: #f53117;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.checkBtn {
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+.checkBtn {
+    z-index: 6;
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    color: #f53117;
+    line-height: 80px;
+    position: relative;
+}
+
+.right ul {
+    display: flex;
+    list-style: none;
+}
+
+.right ul li a {
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    transition: all 1s;
+    text-decoration: none;
+    color: rgb(20, 20, 20);
+}
+
+.right ul li a:hover {
+    border-radius: 7px;
+    background-color: #fff;
+    color: rgb(22, 7, 36);
+}
+
+#home {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(235 232 229);
+}
+
+.home-left .col-red {
+    margin-bottom: 10px;
+}
+
+.home-left .col-red p {
+    padding: 4px;
+    display: inline;
+    font-weight: bold;
+    border-radius: 9px;
+    background: #edcbc1;
+    color: rgb(245, 49, 23);
+}
+
+.home-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-left p {
+    margin-bottom: 10px;
+}
+
+.home-left h1 {
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.home-right {
+    height: 300px;
+    width: 300px;
+    cursor: pointer;
+    transition: all .5s ease-in;
+    border-top-right-radius: 130px;
+    border-bottom-left-radius: 130px;
+    background-color: rgb(245, 49, 23);
+    box-shadow: 0px 0px 12px 0px rgb(47 53 79);
+}
+
+.home-right:hover {
+    transform: translateY(-12px);
+}
+
+.home-right img {
+    position: relative;
+    bottom: 16px;
+    left: 67px;
+    z-index: 1;
+    width: 158px;
+}
+
+.bg-red-btn {
+
+    padding: 8px;
+    width: 124px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 15rem;
+    background: rgb(245, 49, 23);
+    border: 1px solid rgb(245, 49, 23);
+}
+
+.bg-red-btn:hover {
+    padding: 8px;
+    margin-top: 10px;
+    background: transparent;
+    color: rgb(245, 49, 23);
+    border: 1px solid rgb(245, 49, 23);
+}
+#delivery-partner {
+    height: auto;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+#delivery-partner h4,
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.partners {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner {
+    cursor: pointer;
+    width: 300px;
+    margin: 15px;
+    padding: 9px;
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all .5s ease-in;
+    box-shadow: 0px 0px 12px -1px black;
+}
+
+.partner:hover {
+    transform: translateY(-12px);
+}
+
+.partner img {
+    width: 100px;
+}
+
+.partners .left img {
+    width: 70px;
+}
+
+#chef-main {
+    height: auto;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+h4 {
+    font-weight: bold;
+    color: rgb(245, 49, 23);
+}
+
+#chef-main h4,
+h1 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.chefs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.chef-item {
+    margin: 15px;
+    padding: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.chef-item:hover {
+    transform: scale(1.1)
+}
+
+.chef-item img {
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 12px -1px black;
+}
+
+#contact {
+    padding: 25px;
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+#contact h4,
+h1 {
+    text-align: center;
+}
+
+.main-form {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    width: 355px;
+}
+
+.main-form input,
+textarea {
+    display: block;
+    margin: auto;
+    width: 90%;
+    border: none;
+    padding: 7px;
+    margin: 10px auto;
+    border-radius: 9px;
+    background: #ede0e8;
+}
+
+.main-form button {
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+footer {
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background-color: rgb(227, 240, 240);
+}
+
+@media screen and (max-width:805px) {
+    .list {
+        z-index: 2;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        left: 100%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        transition: all 1s;
+        background-color: rgb(22, 7, 36);
+    }
+
+    .right ul li a {
+        color: #fff;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        transition: all 1s;
+        text-decoration: none;
+    }
+
+    .right ul li a:hover {
+        border-radius: 7px;
+        color: rgb(22, 7, 36);
+        background-color: #fff;
+    }
+
+    #check {
+        display: none;
+    }
+
+    .checkBtn {
+        display: block;
+    }
+
+    #check:checked~ul {
+        left: 0%;
+        top: 0%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 717px) {
+    .header {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 669px) {
+
+    #home {
+        flex-direction: column;
+    }
+
+    .home-left h1 {
+        font-size: 30px;
+    }
+
+    .home-left p {
+        font-size: 13.7px;
+    }
+
+    .home-right {
+        width: 280px;
+        margin-top: 20px;
+    }
+
+    .bg-red-btn {
+        width: 85px;
+        font-size: 10px;
+        margin-top: 0px;
+    }
+
+    #delivery-partner {
+        height: auto;
+        padding: 1px;
+        width: 100%;
+    }
+
+    #contact h4,
+    h1 {
+        font-size: 20px;
+    }
+
+    #chef-main {
+        height: auto;
+    }
+
+    .chef-item img {
+        width: 95%;
+        height: auto;
+    }
+
+    .main-form {
+        width: 100%;
+        height: auto;
+    }
+}
+	</style>
+</head>
+
+<body>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chef Landing Page </title>
+    <!-- Linking Style Sheets-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- ================== Navbar Code Starts from Here ================== -->
+    <nav class="navbar">
+        <div class="left">
+            <h1> Chef.</h1>
+        </div>
+        <div class="right">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkBtn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <ul class="list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+   
+    <section id="home">
+        <div class="home-left">
+            <div class="col-red">
+                <p>More Then Faster</p>
+            </div>
+            <h1>Be The Fastest <br> In Delivering <br> Your Food</h1>
+            <p>such as online grocery stores  <br> allow you to buy the items you need and receive them in minutes.</p>
+            <button class="bg-red-btn">Contact Here</button>
+        </div>
+        <div class="home-right">
+            <img src="D:\Shubham\logo2.jpg" alt="">
+        </div>
+    </section>
+    
+
+    <section id="delivery-partner">
+        <h4>WHAT WE SERVE</h4>
+        <h1>Your Favourite Food <br> Delivery Partner</h1>
+        <div class="partners">     
+            <div class="partner left">
+                <img id="left" src="D:\Shubham\logo.png" alt="">
+                <h3>Easy To Order</h3>
+                <p>Such as online grocery stores, allow you to buy the items you need and receive them in minutes, thanks to rapid deliveries.</p>
+            </div>
+            <div class="partner ">
+                <img id="center" src="D:\Shubham\logo.png" alt="">
+                <h3>Easy To Order</h3>
+                <p>Such as online grocery stores, allow you to buy the items you need and receive them in minutes, thanks to rapid deliveries.</p>
+            </div>
+            <div class="partner">
+                <img id="right" src="D:\Shubham\logo.png" alt="">
+                <h3>Easy To Order</h3>
+                <p>Such as online grocery stores, allow you to buy the items you need and receive them in minutes, thanks to rapid deliveries.</p>
+            </div>
+        </div>
+    </section>
+   
+    <section id="chef-main">
+        <h4>WHAT WE SERVE</h4>
+        <h1>Our Awesome Chef's</h1>
+        <div class="chefs">
+            <div class="chef-item">
+                <img id= " left " src="D:\Shubham\chef1.jpg" alt="">
+            </div>
+            <div class="chef-item">
+                <img id="bottom" src="D:\Shubham\chef2.jpeg" alt="">
+            </div>
+            <div class="chef-item">
+                <img id=" right " src="D:\Shubham\chef3.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h4>HAVE ANY QUESTION?</h4>
+        <h1>Contact Us</h1>
+        <div class="main-form">
+            <input type="text" name="name" id="name" placeholder=" Your Name">
+            <input type="email" name="name" id="email" placeholder=" Enter Your Email">
+            <input type="phone" name="name" id="" placeholder=" Your Name Phone Number">
+            <textarea name="text" id="textareaa" cols="30" rows="10" placeholder="Write Your Message Here"></textarea>
+            <button class="bg-red-btn">Send</button>
+        </div>
+    </section>
+   
+    <footer>
+        <h5>&copy; www.Fastest In Delivery Your Food</h5>
+    </footer>
+   
+</body>
+</html>
